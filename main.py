@@ -101,6 +101,14 @@ class Game:
                     self.tilemap_decor = tilemap.Tilemap(32, 0, 0, "data/scene_" + self.scene + "/tilemap_decor.txt")
                     self.tilemap_1 = tilemap.Tilemap(32, 0, 0, "data/scene_" + self.scene + "/tilemap_layer_1.txt")
                     self.tilemap_2 = tilemap.Tilemap(32, 0, 0, "data/scene_" + self.scene + "/tilemap_layer_2.txt")
+                    self.tilemap_1.create_collisions(self.display)
+                    self.tilemap_2.create_collisions(self.display)
+
+                    self.tilemap_collisions = []
+                    for tile in self.tilemap_1.tilemap_collisions:
+                        self.tilemap_collisions.append(tile)
+                    for tile in self.tilemap_2.tilemap_collisions:
+                        self.tilemap_collisions.append(tile)
                     
 
     # game logic
